@@ -1,0 +1,50 @@
+$primary: #06b;
+$primary-light: #07f;
+$primary-back: #def;
+
+$hover: #d7ebff;
+$active: #b7dafa;
+$selected: #cbe4fd;
+
+$red: #a00;
+$orange: #da0;
+$green: #0a0;
+$blue: #0ad;
+$neutral: #999;
+
+$text-primary: #000d;
+$text-secondary: #000a;
+$text-muted: #0009;
+
+$back-white: #fcfcfa;
+$back-red: #fdd;
+
+$border-light: #ccc;
+$border-strong: #aaa;
+
+$semibold: 600;
+
+$spacer: 12px;
+
+$pad-xs: 2px;
+$pad-s: 4px;
+$pad: 8px;
+$pad-l: 12px;
+$pad-v: 5px; /* vertical padding */
+
+$width-xs: 80px;
+$width-s: 120px;
+$width-m: 160px; /* Fits a datetime picker exactly */
+$width-xl: calc(2 * $width-m + $spacer);
+
+@mixin clickable {
+  cursor: pointer;
+
+  &:hover {
+    background: $hover;
+  }
+
+  &:active {
+    background: $active;
+  }
+}

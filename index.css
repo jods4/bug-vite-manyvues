@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    outline: none;
+  }
+
+  body {
+    @apply text-gray-900;
+    font-size: 15px;
+  }
+
+  h2,
+  h3 {
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .pill {
+    @apply inline-block rounded px-3 py-0.5 leading-none text-white font-semibold text-sm;
+  }
+
+  .card {
+    @apply bg-white border border-gray-400 rounded shadow-md px-3 py-2 w-83;
+  }
+
+  .card-info,
+  .card-success,
+  .card-error,
+  .card-warn,
+  .card-disabled {
+    border-left: solid 6px var(--card-color); /* Note that --card-color is reused by some consumer styles, e.g. icons in notify component */
+  }
+
+  .card-info {
+    --card-color: theme("colors.blue.600");
+  }
+
+  .card-success {
+    --card-color: theme("colors.green.700");
+  }
+
+  .card-error {
+    --card-color: theme("colors.red.700");
+  }
+
+  .card-warn {
+    --card-color: theme("colors.yellow.500");
+  }
+
+  .card-disabled {
+    --card-color: theme("colors.gray.400");
+  }
+
+  .icon-circle {
+    border: solid 1px currentColor;
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 1.5em;
+  }
+
+  .dialog-back {
+    background: #0004;
+    backdrop-filter: saturate(0.2);
+    z-index: 100;
+    animation: backdrop-in 0.3s ease-out;
+
+    &.anim-leaving {
+      animation: backdrop-out 160ms ease-in;
+    }
+  }
+
+  dialog {
+    border: 1px solid var(--dialog-color, theme("colors.gray.500"));
+
+    & h3 {
+      color: var(--dialog-color);
+    }
+
+    &::backdrop {
+      display: none; /* we use our own backdrop because we need to be able to layer things on top, notably the toast notifications */
+    }
+  }
+
+  .dialog-info {
+    --dialog-color: theme("colors.blue.600");
+  }
+  .dialog-error {
+    --dialog-color: theme("colors.red.700");
+  }
+}
+
+@layer utilities {
+  .small-caps {
+    font-variant: all-small-caps;
+  }
+
+  .table {
+    @apply border-collapse;
+
+    & :is(th, td) {
+      @apply px-3 py-1;
+    }
+
+    & th {
+      @apply font-semibold text-left border-b border-gray-900;
+    }
+
+    & tr {
+      @apply border-b border-gray-300;
+    }
+  }
+
+  .flow {
+    @apply flex flex-wrap gap-3;
+  }
+}
+
+/* Keyframes for dialog::backdrop, Tailwind will purge them if I leave them inside @layer components */
+
+@keyframes backdrop-in {
+  from {
+    background: #0000;
+  }
+}
+
+@keyframes backdrop-out {
+  to {
+    background: #0000;
+  }
+}

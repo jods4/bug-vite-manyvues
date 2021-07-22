@@ -1,0 +1,12 @@
+{
+  "plugins": {
+    "tailwindcss": {},
+    "postcss-advanced-variables": {},
+    "postcss-nested": {},
+    "postcss-color-function": {},
+    "autoprefixer": {},
+    "postcss-inline-svg": {},
+    "postcss-url": { "url": "inline" },
+    "cssnano": {}
+  }
+}

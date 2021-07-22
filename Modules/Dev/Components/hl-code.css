@@ -1,0 +1,16 @@
+.hljs {
+  margin: 0;
+  padding: 0.8em 1em;
+  font-family: "Cascadia Code", Consolas;
+}
+
+.dev-docs {
+  overflow-y: auto;
+}
+
+.dev-docs code {
+  background: rgb(222, 235, 243);
+  font-family: "Cascadia Code", Consolas;
+  padding: 2px 4px;
+  border-radius: 3px;
+}

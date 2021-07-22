@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "importHelpers": true,
+
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "incremental": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
+
+    "strict": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "allowSyntheticDefaultImports": true
+  },
+
+  "include": ["**/*.ts", "**/*.vue"],
+
+  "compileOnSave": false
+}
